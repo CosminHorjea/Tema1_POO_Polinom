@@ -170,7 +170,7 @@ void Polinom::erase(unsigned int grad)
     throw invalid_argument("Polinomul pe care s-a apelat functia nu are indexul din argument"); // eroare daca nu am sters nimic
 }
 
-double Polinom::getValueFor(double x)
+double Polinom::getValueFor(double x) const
 {
     /*
 	@param
@@ -299,6 +299,12 @@ double &Polinom::operator[](unsigned int i) const
         p = p->next;
     }
     throw invalid_argument("Polinomul nu are element cu gradul din []");
+}
+
+double Polinom::operator()(const double val) const
+{
+    double result = this->getValueFor(val); //apelez cealalta funcite de aflat valoarea
+    return result;
 }
 
 std::istream &operator>>(std::istream &input, Polinom &p)

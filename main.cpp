@@ -14,6 +14,7 @@ void runTestsPolinom()
     assert(p3[2] == p[2]);             // verific operatorul [] si copierea
     assert(p3.getDeg() == p.getDeg()); // verific daca am grade egale
     assert(p.getValueFor(2) == 14);    // verific calculul intr-un anumit punct
+    assert(p(2) == 14);                // verific calculul intr-un anumit punct cu ()
     cout << "p4:" << p3 << endl;
     cout << "p4/p: " << p3 / p << endl;
     assert((p3 / p).getDeg() == 0); // verific daca am obrinut 1 (careare gradul 0)
